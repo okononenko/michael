@@ -8,29 +8,15 @@
         <script type="text/javascript">
             jQuery(document).ready(function(){
 
-                //jQuery("#par1").ajaxStart(function(){
-                    //jQuery("par1").css("display","block");
-               // });
-
-                //jQuery("#par1").ajaxStop(function(){
-                 //  jQuery("#par1").css("display","none");
-                //});
-
                 jQuery(".form").blur(function(){
                     jQuery("#par1").load("hello.php", jQuery(".form").val());
-
-                //if(jQuery(".form").val() == "michael") {
-                    //alert ('Hello, Michael Jackson');
-                //}
-                //else {
-                    //alert ('you are not Michael');
-                //}
-
+                });
+                jQuery(".form").focus(function(){
+                    jQuery("#par1").html("");
                 });
             });
         </script>
         <input class="form" type="text" value="" />
-        <input class="but" type="button" value="click" />
-        <p id="par1">sss</p>
+        <p id="par1"></p>
     </body>
 </html>
