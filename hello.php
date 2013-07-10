@@ -2,19 +2,11 @@
 <script type="text/javascript">
     jQuery(document).ready(function(){
         if(jQuery(".form").val() == "michael") {
-            //alert ('Hello, Michael Jackson');
-            jQuery("par1").html("Hello, Michael Jackson");
+            jQuery("#par1").html("Hello, Michael Jackson");
         }
         else {
-            //alert ('you are not Michael');
-            jQuery("par1").html("Hello, Michael Jackson");
+            jQuery("#par1").html("you are not Michael");
         }
     });
 </script>
 
-
-<?php
-/**
-<?php echo $this->__('Hello World'); ?>
- */
-?>
