@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hello Michael</title>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-    </head>
+<head>
+    <title>Hello Michael</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
 
-    <body>
+<body>
 
-    <form id="myform" name="input" action="http://localhost/test/hello.php" method="post">
-        Username: <input type="text" name="user" />
-        <input type="submit" value="Submit" />
-    </form>
+<form id="myform" action="http://localhost/test/hello.php" method="post">
+    <ul>
+        <li><label>Username: </label><input type="text" name="user"/></li>
+        <li><label>Age: </label><input type="text" name="age"/></li>
+        <li><label>Sex: </label>
 
-        <p id="par1"></p>
+            <div id="sex"><label for="male">male</label><input id="male" type="radio" checked="checked" value="male"
+                                                               name="sex"/> <br/>
+                <label for="female">female</label><input id="female" type="radio" value="female" name="sex"/>
+            </div>
+        </li>
 
-    </body>
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            jQuery("#myform").submit(function(){
-                jQuery.ajax({
-                    url: jQuery(this).attr("action"),
-                    type: "POST",
-                    data: jQuery(this).serialize()
-                }).success(function(result) {
-                    alert ("10");
-                });
-               return false;
+        <li><label>Number: </label><input type="text" name="num"/></li>
+        <button type="submit">Click</button>
+    </ul>
+</form>
+
+<p id="par1"></p>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("#myform").submit(function () {
+            jQuery.ajax({
+                url: jQuery(this).attr("action"),
+                type: "POST",
+                data: jQuery(this).serialize(),
+                success: function (result) {
+                    jQuery("#par1").html(result);
+                }
             });
         });
+    });
 
-    </script>
+</script>
+<style type="text/css">
+    ul {
+        list-style: none;
+    }
+
+    ul li {
+        margin: 2px 0;
+    }
+
+    label {
+        width: 85px;
+        display: inline-block;
+    }
+
+    #sex {
+        padding: 0 0 0 20px;
+    }
+</style>
+</body>
+
 </html>
