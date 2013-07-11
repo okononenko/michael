@@ -1,16 +1,4 @@
-<?php if ()?>
-
-
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function(){
-        if(jQuery(".form").val() == "michael") {
-            jQuery("#par1").html("Hello, Michael Jackson");
-        }
-        else {
-            jQuery("#par1").html("you are not Michael");
-        }
-    });
-</script>
+<?php
+if ( isset ($_POST ['user']) and $_POST ['user'] == 'michael') {echo ("<p>Hello, Michael</p>");}
+else {echo "<p>error</p>";}
 

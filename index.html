@@ -4,20 +4,15 @@
         <title>Hello Michael</title>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     </head>
-    <body>
-    <!--load hello php script-->
-        <script type="text/javascript">
-            jQuery(document).ready(function(){
 
-                jQuery(".form").blur(function(){
-                    jQuery("#par1").load("hello.php", jQuery(".form").val());
-                });
-                jQuery(".form").focus(function(){
-                    jQuery("#par1").html("");
-                });
-            });
-        </script> <!--end load hello php script-->
-        <input class="form" type="text" value="" />
+    <body>
+
+    <form name="input" action="http://localhost/test/hello.php" method="post">
+        Username: <input type="text" name="user" />
+        <input type="submit" value="Submit" />
+    </form>
+
         <p id="par1"></p>
+
     </body>
 </html>
